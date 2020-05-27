@@ -1,5 +1,3 @@
-English|[中文](README_CN.md)
-
 # WHENet Head Pose Estimation \(Python\)<a name="EN-US_TOPIC_0232617557"></a>
 
 ## Project Overview
