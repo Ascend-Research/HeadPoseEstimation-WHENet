@@ -13,8 +13,8 @@ pose estimation. Our network is compact and efficient for mobile devices and app
 
 ## Implementation
 We provide both the Huawei Ascend processor and GPU/CPU implementation in the repository.
-* [**Implementation on Huawei Ascend 310 AI Processor**](https://github.com/Atlas200dk-test/WHENet_model/tree/master/Huawei_Ascend)
-* [**Implementation on GPU/CPU**](https://github.com/Atlas200dk-test/WHENet_model/tree/master/GPU_CPU)
+* [**Implementation on Huawei Ascend 310 AI Processor**](https://github.com/Atlas200dk/sample-headposeestimation-WHENet/tree/master/Huawei_Ascend)
+* [**Implementation on GPU/CPU**](https://github.com/Atlas200dk/sample-headposeestimation-WHENet/tree/master/GPU_CPU)
 
 ## Experiment results
 <img src=readme_imgs/video.gif height="220"/> <img src=readme_imgs/turn.JPG height="220"/> 
