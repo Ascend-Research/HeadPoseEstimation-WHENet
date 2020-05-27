@@ -12,7 +12,7 @@ head yaws (hence wide) yet also meets or beats state-of-the-art methods for fron
 pose estimation. Our network is compact and efficient for mobile devices and applications. [**ArXiv**](https://arxiv.org/abs/2005.10353)
 
 ## Implementation
-We provide both the Huawei Ascend processor and CPU/GPU implementation in the repository.
+We provide both the Huawei Ascend processor and GPU/CPU implementation in the repository.
 * [**Implementation on Huawei Ascend 310 AI Processor**](https://github.com/Atlas200dk-test/WHENet_model/tree/master/Huawei_Ascend)
 * [**Implementation on GPU/CPU**](https://github.com/Atlas200dk-test/WHENet_model/tree/master/GPU_CPU)
 
