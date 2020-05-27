@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Channels</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/list.css">
+    <link rel="stylesheet" href="/static/css/dialog.css">
+
+</head>
+<body>
+<div class="box">
+   <div class="nav">
+        <div class="nav_left">
+            <img src="/static/images/logo.png" alt="">
+            <p><span>Presenter Server</span></p>
+        </div>
+        <div class="nav_right">
+        </div>
+    </div>
+
+    <div class="box_top">
+        <span> >View List</span>
+    </div>
+    <div style="width:100%;height:2px;background-color:#ccc;"></div>
+    <div class="box_content">
+        <ul class="content_top">
+            <li class="top_refresh"><img src="/static/images/u1.png" alt=""><span>Refresh</span></li>
+            <li class="top_del"><img src="/static/images/u2.png" alt=""><span>Delete</span></li>
+        </ul>
+        
+        <div class="content_bot">
+            <form name="myForm">
+                <table  id="mytable" border="1" width="100%">
+                    <tr>
+                        <th></th>
+                        <th><input type="checkbox" id="checkAll"></th>
+                        <th>Status</th>
+                        <th>View Name</th>
+                    </tr>
+                    {% for item in listret %}
+                       <tr>
+                        <td>{{item['id']}}</td>
+                        <td><input type="checkbox" name="selectFlag" value="1"></td>
+                        {% if item['status'] == 1 %}
+                        <td><img src="/static/images/u5.png" alt=""></td>
+                        {% else %}
+                        <td><img src="/static/images/u6.png" alt=""></td>
+                        {% end %}
+                        <td ><a class="view_channel" style="cursor:pointer">{{item['name']}}</a></td>
+                    </tr>
+                    {% end %}
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/static/js/jquery-1.10.2.min.js"></script>
+<script src="/static/js/dialog.js"></script>
+<script>
+    $("#checkAll").click(function() {
+        if (this.checked) {
+            $("input[name='selectFlag']:checkbox").each(function() {
+                $(this).attr("checked", true);
+            })
+        } else {   //反之 取消全选
+            $("input[name='selectFlag']:checkbox").each(function() {
+                $(this).attr("checked", false);
+            })
+        }
+    });
+    $(".view_channel").click(function(){
+        var url = "/view?name=" + encodeURIComponent($(this).text());
+        window.open(url);
+    }
+    );
+</script>
+<script>
+    function checkNameValidate()
+    {
+        var name = $("#cname").val().trim();
+        if (name.length == 0)
+        {
+            dialog.tip("Tips","Channel name can not be empty");
+            return false;
+        }
+
+        if (name.length > 25)
+        {
+            dialog.tip("Tips", "Length of channel name should less than 25" ,function(){});
+            return false;
+        }
+        for (var i = 0; i < name.length; i++)
+        {
+            var c = name.charAt(i).charCodeAt();
+            var flag =  ((c >= 48 && c <= 57) || (c >= 97 && c<= 122) || (c>= 65 && c <= 90) || (c == 47));
+            if (false == flag)
+            {
+                dialog.tip("Tips", "Channel name only support 0-9, a-z, A-Z /" ,function(){});
+                return false;
+            }
+        }
+        return true;
+    }
+
+    $(".top_create").click(function () {
+        if($(".content_mid").css("display")=="none"){
+            $(".content_mid").css("display","block").animate({height:"100px"});
+        }else{
+            $(".content_mid").animate({height:"0"}).css("display","none");
+        }
+    });
+     $(".mid_add").click(function () {
+         var rowlen = $("#mytable").find("tr").length;
+         if (rowlen >= 11)
+         {
+            dialog.tip("Tips", "Presenter supports up to 10 channels" ,function(){});
+            return;
+         }
+
+         //check
+         if (true == checkNameValidate())
+            {
+             var url = "/add?"+"name=" + encodeURIComponent($("#cname").val().trim()) +"&time="+(new Date().getTime());
+             $.ajax({
+                     type: "POST",
+                     url: url,
+                     dataType: "json",
+                     success: function(data)
+                     {
+                         if (data["ret"] == "success")
+                         {
+                             window.location.reload()
+                         }
+                         else
+                            {
+                              dialog.tip("Tips", data["msg"], function(){});
+                            }
+                     },
+                  });
+            }
+
+     });
+     $(".top_refresh").click(function () {
+         window.location.reload();
+     });
+     $(".top_del").click(function () {
+         if($("input[name='selectFlag']").is(":checked")){
+             var msg = "";
+             $("input[name='selectFlag']:checked").each(function() {
+                 // 遍历选中的checkbox
+                 tr = $(this).parents("tr");
+                 td = $(tr).find("td");
+                 msg += encodeURIComponent($(td).eq(3).text());
+                 msg += ",";
+             });
+             dialog.confirm("Tips", "Are you sure to delete ？", function(){
+                var url = "/del?"+"time="+(new Date().getTime())+"&name="+msg;
+                 $.ajax({
+                         type: "POST",
+                         url: url,
+                         dataType: "json",
+                         success: function(data)
+                         {
+                             if (data["ret"] == "success")
+                             {
+                                 window.location.reload()
+                             }
+                             else
+                                {
+                                  dialog.tip("Tips", data["msg"], function(){});
+                                }
+                         },
+                      });
+                }, function(){});
+         }else{
+             dialog.tip("Tips", "Please select one item at least", function(){});
+         }
+
+     });
+</script>
+</html>

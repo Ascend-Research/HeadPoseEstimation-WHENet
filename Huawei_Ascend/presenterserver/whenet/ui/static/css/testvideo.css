@@ -1,0 +1,71 @@
+body{
+    background-color: #edf7f9;
+    font-family: Arial, 宋体, Tahoma;
+}
+
+.nav{
+    width: 100%;
+    height: 80px;
+    background-color: #155070;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.nav_left{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.nav_left img{
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+.nav_left p span{
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.refresh{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -6px 0 0 -6px ;
+
+}
+
+.video_top{
+    width: 1024px;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+
+}
+.video_content{
+    width: 1024px;
+    margin: 0 auto;
+}
+.video_fps{
+    text-align: right;
+    padding-right: 100px;
+}
+.video_inner{
+    text-align: center;
+    position: relative;
+}

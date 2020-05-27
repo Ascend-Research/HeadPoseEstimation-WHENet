@@ -1,0 +1,15 @@
+First, you must ensure "python3.5" is install in your ubuntu environment.
+
+# Install the dependency package.
+# First go to the presenter server directory
+1. sudo pip3 install -r requirements
+
+# Configure your network information.
+# Modify presenter_server_ip to the IP address of the private network that can be accessed by the development board.
+# Modify web_server_ip  to the IP address that  your  Chrome browser can access.
+2. sudo vim face_detection/config/config.conf
+
+# Go to the source code directory and run the python program.
+3. python3.5 presenter_server.py --app=face_detection
+
+4. Open your browser(only support Chrome now), and visit the website, for example: http:192.168.1.100:7007

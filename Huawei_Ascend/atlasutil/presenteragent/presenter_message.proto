@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package ascend.presenter.proto;
+
+enum OpenChannelErrorCode {
+    kOpenChannelErrorNone = 0;
+    kOpenChannelErrorNoSuchChannel = 1;
+    kOpenChannelErrorChannelAlreadyOpened = 2;
+    kOpenChannelErrorOther = -1;
+}
+
+enum ChannelContentType {
+    kChannelContentTypeImage = 0;
+    kChannelContentTypeVideo = 1;
+}
+
+// By Protocol Buffer Style Guide, need to use underscore_separated_names
+// for field names
+message OpenChannelRequest {
+    string channel_name = 1;
+    ChannelContentType content_type = 2;
+}
+
+message OpenChannelResponse {
+    OpenChannelErrorCode error_code = 1;
+    string error_message = 2;
+}
+
+message HeartbeatMessage {
+
+}
+
+enum ImageFormat {
+    kImageFormatJpeg = 0;
+}
+
+message Coordinate {
+    uint32 x = 1;
+    uint32 y = 2;
+}
+
+message Rectangle_Attr {
+    Coordinate left_top = 1;
+    Coordinate right_bottom = 2;
+    string label_text = 3;
+}
+
+message PresentImageRequest {
+     ImageFormat format = 1;
+     uint32 width = 2;
+     uint32 height = 3;
+     bytes data = 4;
+     repeated Rectangle_Attr rectangle_list = 5;
+}
+
+enum PresentDataErrorCode {
+    kPresentDataErrorNone = 0;
+    kPresentDataErrorUnsupportedType = 1;
+    kPresentDataErrorUnsupportedFormat = 2;
+    kPresentDataErrorOther = -1;
+}
+
+message PresentImageResponse {
+    PresentDataErrorCode error_code = 1;
+    string error_message = 2;
+}
+

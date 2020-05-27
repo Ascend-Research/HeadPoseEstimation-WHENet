@@ -1,0 +1,77 @@
+#dlg-mask {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 10000;
+	background-color: rgba(0,0,0,0.75)/*rgba(140,140,140,0.4)*/;
+}
+
+#dlg-mask * {
+	color: #000;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box; /* Firefox */
+	-webkit-box-sizing: border-box; /* Safari */
+}
+
+#dlg-box {
+	position: absolute;
+	width: 350px;
+	z-index: 200001;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.88);
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+#dlg-box h1 {
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	margin: 0;
+	font-weight: bold;
+	font-size: 18px;
+}
+#dlg-box p, #dlg-box input {
+	width: 100%;
+    margin: 20px 0;
+    font-size: 15px;
+}
+#dlg-box p {
+	width: 100%;
+    margin: 20px 0;
+    font-size: 15px;
+	line-height: 1.2;
+	word-wrap: break-word;
+	word-break: normal;
+	white-space: normal;
+}
+#dlg-box input {
+	height: 29px;
+	cursor: text;
+}
+#dlg-box div {
+	height: 30px;
+}
+#dlg-box div span {
+	display: inline-block;
+	float: right;
+    width: 64px;
+    height: 30px;
+    font-size: 15px;
+    color: #187be1;
+    text-align: center;
+    line-height: 30px;
+	cursor: pointer;
+}
+#dlg-box div span:hover {
+	background: #eee;
+}
+
+.dot {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
