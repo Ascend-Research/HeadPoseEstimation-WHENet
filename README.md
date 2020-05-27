@@ -13,8 +13,8 @@ pose estimation. Our network is compact and efficient for mobile devices and app
 
 ## Implementation
 We provide both the Huawei Ascend processor and CPU/GPU implementation in the repository.
-* [**Huawei Ascend implementation**]()
-* [**CPU/GPU implementation**]()
+* [**Huawei Ascend implementation**](https://github.com/Atlas200dk-test/WHENet_model/tree/master/Huawei_Ascend)
+* [**CPU/GPU implementation**](https://github.com/Atlas200dk-test/WHENet_model/tree/master/GPU_CPU)
 
 ## Experiment results
 <img src=readme_imgs/video.gif height="220"/> <img src=readme_imgs/turn.JPG height="220"/> 
