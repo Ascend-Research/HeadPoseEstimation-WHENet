@@ -1,0 +1,5 @@
+numpy
+opencv-python
+tensorflow-gpu==1.12.0
+keras==2.1.6
+efficientnet==0.0.4
