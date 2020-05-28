@@ -5,12 +5,12 @@
 This project is a real-time video implementation of Wide Headpose Estimation Network(WHENet) on Atlas200DK board.
 
 ![](figures/whenet-output.png "whenet-output")
-Photo by: Randy Holmes/ABC
 
 ### Project Structure
 
 ![](figures/project-structure-final.png "project-structure")  
 
+(Photo by: Randy Holmes/ABC)
 
 ## Application Deployment Steps
 
