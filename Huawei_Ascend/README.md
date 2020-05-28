@@ -10,7 +10,8 @@ This project is a real-time video implementation of Wide Headpose Estimation Net
 ### Project Structure
 
 ![](figures/project-structure-final.png "project-structure")  
- 
+
+above image is from: https://www.eonline.com/au/news/907432/chris-evans-doesn-t-think-he-s-hot-and-for-good-reason 
 ## Application Deployment Steps
 
 You can deploy this application on the Atlas 200 DK to collect camera data in real time and predict head information in the video.
