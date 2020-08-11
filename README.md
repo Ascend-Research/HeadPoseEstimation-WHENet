@@ -1,5 +1,8 @@
 WHENet: Real-time Fine-Grained Estimation for Wide Range Head Pose
 ===
+**Yijun Zhou and James Gregson - BMVC2020**
+
+
 **Abstract:** We present an end-to-end head-pose estimation network designed to predict Euler
 angles through the full range head yaws from a single RGB image. Existing methods
 perform well for frontal views but few target head pose from all viewpoints. This has
@@ -13,6 +16,8 @@ pose estimation. Our network is compact and efficient for mobile devices and app
 
 ## Demo
 We provided two use case of the WHENet, image input and video input in this repo. Please make sure you installed all the requirments before running the demo code by `pip install -r requirements.txt`.
+<img src=readme_imgs/video.gif height="220"/> <img src=readme_imgs/turn.JPG height="220"/> 
+
 ## Image demo
 To run WHENet with image input, please put images and bbox.txt under one folder (E.g. Sample/) and just run `pthon demo.py`.
 
@@ -35,5 +40,3 @@ Please set `--video ''` for webcam input.
 ## Dependncies
 * EfficientNet https://github.com/qubvel/efficientnet
 * Yolo_v3 https://github.com/qqwweee/keras-yolo3
-## Experiment results
-<img src=readme_imgs/video.gif height="220"/> <img src=readme_imgs/turn.JPG height="220"/> 
