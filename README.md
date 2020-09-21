@@ -15,7 +15,8 @@ head yaws (hence wide) yet also meets or beats state-of-the-art methods for fron
 pose estimation. Our network is compact and efficient for mobile devices and applications. [**ArXiv**](https://arxiv.org/abs/2005.10353)
 
 ## Demo
-We provided two use case of the WHENet, image input and video input in this repo. Please make sure you installed all the requirments before running the demo code by `pip install -r requirements.txt`. Additionally, please download the [**YOLOv3**](https://drive.google.com/file/d/1wGrwu_5etcpuu_sLIXl9Nu0dwNc8YXIH/view?usp=sharing) model and put it under `yolo_v3/data`.
+We provided two use case of the WHENet, image input and video input in this repo. Please make sure you installed all the requirments before running the demo code by `pip install -r requirements.txt`. Additionally, please download the [YOLOv3](https://drive.google.com/file/d/1wGrwu_5etcpuu_sLIXl9Nu0dwNc8YXIH/view?usp=sharing) model for head detection and put it under `yolo_v3/data`.
+
 <img src=readme_imgs/video.gif height="220"/> <img src=readme_imgs/turn.JPG height="220"/> 
 
 ## Image demo
