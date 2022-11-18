@@ -20,7 +20,7 @@ We provided two use case of the WHENet, image input and video input in this repo
 <img src=readme_imgs/video.gif height="220"/> <img src=readme_imgs/turn.JPG height="220"/> 
 
 ## Image demo
-To run WHENet with image input, please put images and bbox.txt under one folder (E.g. Sample/) and just run `pthon demo.py`.
+To run WHENet with image input, please put images and bbox.txt under one folder (E.g. Sample/) and just run `python demo.py`.
 
 Format of bbox.txt are showed below:
 ```
